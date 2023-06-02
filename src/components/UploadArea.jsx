@@ -41,8 +41,8 @@ export const UploadArea = () => {
 
   useEffect(() => {
     if (facturasAgrupadas && isExcelValid) {
-      
-      const { docFiles } = createTxtContent({ facturasAgrupadas });
+      const { docFiles, ok } = createTxtContent({ facturasAgrupadas });
+      console.log(ok);
       setDocFiles(docFiles);
     }
   }, [facturasAgrupadas]);
