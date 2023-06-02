@@ -12,7 +12,6 @@ export const useReadFile = ({ file }) => {
         const page = book.Sheets[book.SheetNames[0]];
         const dataJSON = XLSX.utils.sheet_to_json(page, { header: 1 });
         iterateJSONData({ dataJSON, page });
-        console.log(dataJSON[2]);
         setFacturasAgrupadas(groupFacturas({ dataJSON }));
       };
       lector.readAsBinaryString(file);

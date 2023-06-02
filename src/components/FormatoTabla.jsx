@@ -18,7 +18,7 @@ export const FormatoTabla = () => {
     createData(
       219755,
       "Atenciones médicas",
-      "01/03/23",
+      "01/03/2023",
       "HC 181C 2023 Medic Ser",
       "FA.F127-00019410",
       "20/04/2023",

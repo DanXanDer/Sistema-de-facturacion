@@ -8,6 +8,7 @@ import DialogActions from "@mui/material/DialogActions";
 import IconButton from "@mui/material/IconButton";
 import { useState } from "react";
 import { FormatoTabla } from "./";
+import { Typography } from "@mui/material";
 
 const BootstrapDialog = styled(Dialog)(({ theme }) => ({
   "& .MuiDialogContent-root": {
@@ -34,8 +35,7 @@ function BootstrapDialogTitle(props) {
             top: 8,
             color: (theme) => theme.palette.grey[500],
           }}
-        >
-        </IconButton>
+        ></IconButton>
       ) : null}
     </DialogTitle>
   );
@@ -58,7 +58,7 @@ export const FormatoExcel = () => {
   return (
     <div>
       <Button variant="contained" onClick={handleClickOpen}>
-        Guía para utilizar el programa
+        Mostrar guía de uso
       </Button>
       <BootstrapDialog
         maxWidth="lg"
@@ -70,10 +70,32 @@ export const FormatoExcel = () => {
           id="customized-dialog-title"
           onClose={handleClose}
         >
-          La tabla del archivo Excel tiene que tener la misma estructura presentada en el ejemplo. Asimismo, la tabla debe empezar desde la primera columna del Excel
+          <Typography
+            variant="h5"
+            sx={{ textAlign: "center", marginBottom: "20px" }}
+          >
+            Guia de usuario
+          </Typography>
+          <Typography>
+            1. La tabla a exportar debe empezar desde la primera columna (celda
+            A) del Excel
+          </Typography>
+          <Typography>
+          <Typography>
+            2. La tabla debe tener el mismo formato que el ejemplo presentado a
+            continuación.
+          </Typography>
+            3. El titulo de las columnas no son relevantes, pero deben estar en la misma posición que la tabla de ejemplo.
+          </Typography>
+          <Typography
+            variant="h6"
+            sx={{ textAlign: "center", marginTop: "20px" }}
+          >
+            Ejemplo de tabla
+          </Typography>
         </BootstrapDialogTitle>
         <DialogContent dividers>
-          <FormatoTabla/>
+          <FormatoTabla />
         </DialogContent>
         <DialogActions>
           <Button autoFocus onClick={handleClose}>
